@@ -179,7 +179,7 @@ AuthorizationCredentialAppleID parseAuthorizationCredentialAppleIDFromDeeplink(
     email: user?['email'] as String?,
     givenName: name?['firstName'] as String?,
     familyName: name?['lastName'] as String?,
-    userIdentifier: null,
+    userIdentifier: user != null ? user['userIdentifier'] as String : null,
     identityToken: deeplink.queryParameters['id_token'],
     state: deeplink.queryParameters['state'],
   );
